@@ -1,0 +1,87 @@
+final: dec 15 3pm-5pm
+
+1a) write heading line for class warriors that inherits from class curry.
+
+class warriors:public curry
+---------------------------
+b. the base class is curry the derived classd is warriors
+c. derived class is warriors
+d. what order are the constructors + destructors called?
+                      curry            warriors
+			warriors       curry
+
+inherit1, 2
+inherit.nts
+poly1, 2, 3, 4
+
+2. write the heading line for class warriors that inherits from class curry and class durant.
+
+
+single inheritance - one base class
+multiple inheritance- more than one base class
+
+class warriors:public curry, public durant. //make sure include public
+
+3. what is the difference between a public data member and a protected data member?
+public data can be accessed anywhere, protected can only be accessed in derived classes
+
+
+4. what is the difference between public inheritance and protected inheritance?
+
+public:
+base       derived
+public ====> public
+protected ===> protected
+
+protected:
+base         derived
+public=======> protected
+protected =====> protected
+
+5. what is the difference betweeen a concrete class and an abstract class?
+
+concrete: objects can be instantiated
+
+abstract: object cannot be instantiated (for inheritance only)
+
+6. declare a pure virtual void function called calc.
+
+virtual void calc() = 0; (make class abstract)
+
+7. what does a virtul function do for you?
+allows polymorphism
+(if you leave virtual keyword off only base methods are called)
+
+8. how do you decide what to decalare in the base class?
+everything in common to all derived classes should be declared in base class
+
+9. you are to write a tax program using polymorphism. declare methods/classes
+you need to calculate federal rax and state tax for individuals, corporations, partnerships.
+
+noun-class
+verb-method
+
+class Taxes  //must = 0
+{
+public:
+	void calcfed() = 0
+	void calcstate() =0
+};
+
+class Individuals:public Taxes  //no zero here cause cant instantiate
+{public:
+
+virtual void calcfred();
+virtual void calcstate();
+};
+
+class corporation:public Taxes
+{
+public: void calcfed();
+	void calcstate();
+};
+
+class partnerships:public Taxes {
+public: void calcfed();
+	void calcstate();
+};
